@@ -58,7 +58,7 @@ const App = () => {
         <li><Link to = '/'>Home Page</Link></li>
         <li><Link to = '/blogs'>All Blogs</Link></li>
         <li><Link to = '/blogs/add'>Add Blog</Link></li>
-        <li><Link to = '/blogs/edit'>Edit Blog</Link></li>
+        {/* <li><Link to = '/blogs/edit'>Edit Blog</Link></li> */}
         <li><Link to = '/blogs/delete'>Delete Blog</Link></li>
         <li><Link to = '*'>PageNotFound</Link></li>
       </ul>
@@ -78,8 +78,8 @@ const App = () => {
       {/* pass the blog post with the ID that needs to be deleted */}
       <Route path = 'delete/:id' element={<Delete blogs = {blogs} setBlogs = 
       {setBlogs} />} />
-      <Route path = 'edit' element={<EditBlog />} />
-      <Route path = 'edit/:id' element={<Edit />} />
+      {/* <Route path = 'edit' element={<EditBlog />} />
+      <Route path = 'edit/:id' element={<Edit />} /> */}
     </Route>
       <Route path = '*' element={<PageNotFound />} />
     </Routes>
