@@ -62,38 +62,48 @@ const navigate = useNavigate()
 
   return (
     <>
+    <h2>Add a Blog Post</h2>
 {/* create function to handle input from user */}
 
 {/* create onSubmit */}
     <form onSubmit={handleOnSubmit}>
+        <label>Title: </label>
         <input
         type="text"
         onChange={handleTitle}
         placeholder='Please add a title'
+        required
         />
-    
+    <br />
+        <label>Author: </label>
         <input
         type="text"
         onChange={handleAuthor}
         placeholder='Please add an author'
+        required
         />
-
-        <input
+    <br />  
+        <label>Content: </label>        
+        <textarea
         type="text"
+        rows="5"
+        cols="34"
         onChange={handleContent}
         placeholder='Please add content'
-        />
-
+        required
+        ></textarea>
+    <br />
+        <label>ID: </label>
         <input
         type="text"
         onChange={handleID}
         placeholder='Please add an ID'
+        required
         />
-
+    <br />
     <button>Add Post</button>
 
     </form>
-
     </>
   )
 }

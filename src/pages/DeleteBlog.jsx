@@ -15,7 +15,7 @@ const DeleteBlog = ({blogs}) => {
 
 // Check if the inputID exists in the blogs array
         const validID = blogs.some(blog => blog.id == inputID)
-        setError(validID ? '' : 'A blog post with this ID doesn\'t exist...Please try again.')
+        setError(validID ? '' : `A blog post with the ID of ${inputID} doesn\'t exist...please try again!`)
     }
 // add new blog post to blog
     function handleOnSubmit(e) {
@@ -27,18 +27,18 @@ if (!error) {
     }
     return (
         <>
-        <form onSubmit={handleOnSubmit}>
-            
-            <input
-            type="text"
-            onChange={handleID}
-            placeholder='Please add an ID'
-            required
-            />
-{/* short-circuit evaluation */}
-    {error && <p>{error}</p>}
+        <h2>Delete a Blog Post</h2>
+      <form onSubmit={handleOnSubmit}>
+        <input
+          type="text"
+          onChange={handleID}
+          placeholder='Please add an ID'
+          required
+        />
+        {/* Wrap the error message in a container and add a class to it */}
+        {error && <div className="error-message">{error}</div>}
         <button type="submit" disabled={!!error}>Delete Post</button>
-        </form>
+      </form>
         </>
       )
 }

@@ -4,10 +4,11 @@ import Home from './pages/Home'
 import AllBlogs from './pages/AllBlogs'
 import AddBlog from './pages/AddBlog'
 import PageNotFound from './pages/PageNotFound'
-import EditBlog from './pages/EditBlog'
-import Edit from './pages/Edit'
+// import EditBlog from './pages/EditBlog'
+// import Edit from './pages/Edit'
 import DeleteBlog from './pages/DeleteBlog'
 import Delete from './pages/Delete'
+import './assets/styles/App.css'
 
 const App = () => {
 
@@ -52,15 +53,15 @@ const App = () => {
 
   return (
     <>
-
+<div className="container">
     <nav>
       <ul>
         <li><Link to = '/'>Home Page</Link></li>
-        <li><Link to = '/blogs'>All Blogs</Link></li>
-        <li><Link to = '/blogs/add'>Add Blog</Link></li>
+        <li><Link to = '/blogs'>All Blog Posts</Link></li>
+        <li><Link to = '/blogs/add'>Add Blog Post</Link></li>
         {/* <li><Link to = '/blogs/edit'>Edit Blog</Link></li> */}
-        <li><Link to = '/blogs/delete'>Delete Blog</Link></li>
-        <li><Link to = '*'>PageNotFound</Link></li>
+        <li><Link to = '/blogs/delete'>Delete Blog Post</Link></li>
+        <li><Link to = '*'>Page Not Found</Link></li>
       </ul>
     </nav>
 
@@ -83,7 +84,7 @@ const App = () => {
     </Route>
       <Route path = '*' element={<PageNotFound />} />
     </Routes>
-
+</div>
     </>
   )
 }
