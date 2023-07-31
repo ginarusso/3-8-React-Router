@@ -9,7 +9,7 @@ const Delete = ({blogs, setBlogs}) => {
     // destructure it and compare it to the ID from the blog and if it matches, display the blog post
     const {id} = useParams()
     
-    const filteredArray = blogs.filter(blog => blog.id == id)
+    const filteredArray = blogs.filter(blog => blog.id === parseInt(id))
     // console.log(filteredArray)
 
 // add new blog post to blog

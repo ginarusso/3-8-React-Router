@@ -14,7 +14,7 @@ const DeleteBlog = ({blogs}) => {
         setID(inputID)
 
 // Check if the inputID exists in the blogs array
-        const validID = blogs.some(blog => blog.id == inputID)
+        const validID = blogs.some(blog => blog.id === parseInt(inputID))
         setError(validID ? '' : `A blog post with the ID of ${inputID} doesn\'t exist...please try again!`)
     }
 // add new blog post to blog
