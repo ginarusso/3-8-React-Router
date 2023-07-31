@@ -9,7 +9,7 @@ const Delete = ({blogs, setBlogs}) => {
     // destructure it and compare it to the ID from the blog and if it matches, display the blog post
     const {id} = useParams()
     
-    const filteredArray = blogs.filter(blog => blog.id === parseInt(id))
+    const filteredArray = blogs.filter(blog => parseInt(blog.id) === parseInt(id))
     // console.log(filteredArray)
 
 // add new blog post to blog
@@ -18,7 +18,7 @@ const Delete = ({blogs, setBlogs}) => {
 
     if (filteredArray.length === 1) {
          // Create a copy of the blogs array and remove the blog post with the specified ID
-        const updatedBlogs = blogs.filter(blog => blog.id != id)
+        const updatedBlogs = blogs.filter(blog => parseInt(blog.id) !== parseInt(id))
 // Update the state with the new blogs array (i.e., removing the deleted blog post)
       setBlogs(updatedBlogs)
 
